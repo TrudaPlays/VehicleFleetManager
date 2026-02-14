@@ -45,7 +45,7 @@
                         return;
 
                     default:
-                        Console.WriteLine("Invalid choice. Please enter a number 1–6.");
+                        Console.WriteLine("Invalid choice. Please enter a number 1–7.");
                         break;
                 }
 
@@ -65,12 +65,12 @@
 
             // Show current vehicles so user knows what models exist
             Console.WriteLine("\nCurrent vehicles in fleet:");
-            fleet.DisplayAllVehicles();   // or make a lighter version that shows only models
+            fleet.DisplayAllVehicles();
 
             string model;
             Vehicle targetVehicle = null;
 
-            // Loop until we find a matching vehicle or user cancels
+            // Loop until the program finds a matching vehicle or the user cancels
             while (true)
             {
                 Console.Write("\nEnter the Model of the vehicle to add mileage to (or 'cancel' to go back): ");
