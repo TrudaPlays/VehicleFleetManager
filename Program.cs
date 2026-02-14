@@ -6,9 +6,6 @@
         {
             Fleet fleet = new Fleet();
 
-            // Optional: pre-populate with some test data (comment out if not wanted)
-            // fleet.AddVehicle(new Vehicle("Toyota", "Corolla", 2020, 85000));
-            // fleet.AddVehicle(new Vehicle("Ford", "F-150", 2019, 145000));
 
             Console.WriteLine("=== Vehicle Fleet Manager ===\n");
 
@@ -59,11 +56,11 @@
 
         static void DisplayMenu()
         {
-            Console.WriteLine("1. Add Vehicle");
-            Console.WriteLine("2. Remove Vehicle");
+            Console.WriteLine("1. Add Vehicle by Make, Model, Year and Mileage");
+            Console.WriteLine("2. Remove Vehicle by Make (Corolla, Escape, etc)");
             Console.WriteLine("3. Display Fleet");
-            Console.WriteLine("4. Show Average Mileage");
-            Console.WriteLine("5. Service Due Vehicles");
+            Console.WriteLine("4. Show Average Mileage of entire Fleet");
+            Console.WriteLine("5. Service all Vehicles");
             Console.WriteLine("6. Exit");
             Console.Write("Choose: ");
         }
