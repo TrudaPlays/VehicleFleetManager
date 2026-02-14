@@ -73,18 +73,33 @@
             Console.Write("Enter Model: ");
             string model = Console.ReadLine()?.Trim() ?? "Unknown";
 
-            Console.Write("Enter Year: ");
-            if (!int.TryParse(Console.ReadLine(), out int year) || year < 1900 || year > DateTime.Now.Year + 2)
+            int year;
+            while (true)
             {
-                Console.WriteLine("Invalid year. Vehicle not added.");
-                return;
+                Console.Write("Enter Year: ");
+                string yearInput = Console.ReadLine()?.Trim();
+
+                if (int.TryParse(yearInput, out year) && year >= 1900 && year <= DateTime.Now.Year + 2)
+                {
+                    break; // valid → exits the loop
+                }
+
+                Console.WriteLine("Invalid year. Please enter a number between 1900 and " +
+                                  (DateTime.Now.Year + 2) + ".");
             }
 
-            Console.Write("Enter Mileage: ");
-            if (!double.TryParse(Console.ReadLine(), out double mileage) || mileage < 0)
+            double mileage;
+            while (true)
             {
-                Console.WriteLine("Invalid mileage. Vehicle not added.");
-                return;
+                Console.Write("Enter Mileage: ");
+                string mileageInput = Console.ReadLine()?.Trim();
+
+                if (double.TryParse(mileageInput, out mileage) && mileage >= 0)
+                {
+                    break; // valid → exit the loop
+                }
+
+                Console.WriteLine("Invalid mileage. Please enter a non-negative number.");
             }
 
             var vehicle = new Vehicle(make, model, year, mileage);
